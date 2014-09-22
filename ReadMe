@@ -1,0 +1,47 @@
+   glib and libIDL for OS/2 Mozilla builds
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This combination of glib/libIDL was originally put together by Mike Kaply
+(mkaply@us.ibm.com) and Henry Sobotka (sobotka@axess.com) and is meant to
+be used together with the instructions at
+   http://developer.mozilla.org/en/docs/OS/2_Build_Prerequisites
+to compile Mozilla products on OS/2. Some files still contain references
+to VACPP but now only GCC based compilation is supported (version 3.2.2 and
+3.3.5).
+
+
+- Setting it up
+To install just unpack and make sure that the paths are reflected correctly
+in your setmozenv.cmd.
+
+
+- Recompiling for new compiler version
+The package contains binaries for GCC 3.2.2 beta4 CSD1 (i.e. dependent on
+libc05.dll) and GCC 3.3.5 CSD2 (libc062.dll), in the directories gcc322 and
+gcc335, respectively. If you want to compile the two libraries in this package
+with a new GCC version, please follow these steps:
+   cd glib-1.2.10
+   <edit Makefile and adapt PREFIX>
+   make install
+   cd ..\libIDL-0.6.4
+   <edit Makefile and adapt PREFIX>
+   make install
+   <edit your setmozenv.cmd to reflect the new paths if needed>
+
+
+- Sources
+The sources are included in the glib-1.2.10 and libIDL-0.6.4 directories. They
+come from the original Linux packages of the same version but have most files
+removed that are not essential for our purposes (Win32 files, files only needed
+for autotools-based build, and documentation).
+
+
+- License
+Usage is licensed under the GNU Library GPL (see COPYING for details).
+
+
+- Contact
+If you want to complain please post to the group mozilla.dev.ports.os2 on the
+newsserver news.mozilla.org.
+
+Peter Weilbacher <mozilla@Weilbacher.org>, 21May2007

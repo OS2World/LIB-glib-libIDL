@@ -15,6 +15,7 @@ AUTHORS
 ===============
 * Port: Mike Kaply
 * Port: Henry Sobotka
+* Port: Peter Weilbacher
 
 LINKS
 ===============
